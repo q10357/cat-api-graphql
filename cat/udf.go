@@ -1,4 +1,4 @@
-package catservice
+package cat
 
 //Store cats (no db)
 var CatObjs = []Cat{}

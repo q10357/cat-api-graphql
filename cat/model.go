@@ -1,4 +1,4 @@
-package catservice
+package cat
 
 type Cat struct {
 	ID    int    `json:"id"`
