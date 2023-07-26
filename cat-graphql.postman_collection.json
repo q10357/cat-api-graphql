@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "9e71cb46-3758-46d4-a862-0ca464863fdd",
+		"name": "cat-graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19843451"
+	},
+	"item": [
+		{
+			"name": "Read All Cats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    cats {\r\n        id\r\n        name\r\n        color\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cat",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n    addCat(name : \"Tina\", color: \"white\") {\r\n        id\r\n        name\r\n        color\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cat",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Cat By Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n    cat(id : 1) {\r\n        id\r\n        name\r\n        color\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cat",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cat By Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n   updateCat(\r\n        id : 1, \r\n        name : \"UpdatedCat\", \r\n        color : \"black\"\r\n   )\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cat",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n   deleteCat(id : 1)\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cat",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cat"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

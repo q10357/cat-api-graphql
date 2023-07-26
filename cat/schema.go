@@ -93,7 +93,7 @@ var catMutations = graphql.NewObject(
 						Type: graphql.String,
 					},
 					"color": &graphql.ArgumentConfig{
-						Type: graphql.Boolean,
+						Type: graphql.String,
 					},
 				},
 				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
